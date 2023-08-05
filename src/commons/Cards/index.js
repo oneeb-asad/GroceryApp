@@ -1,14 +1,14 @@
-import React from 'react';
-import {StyleSheet} from 'react-native';
-import {ComponentWrapper, RowWrapperBasic, Wrapper} from '../Wrappers';
-import {Text, Image, TouchableOpacity} from '../../core-ui';
-import {height, width} from '../../helpers/dimensions';
-import {Add, fontFamily, fontSize} from '../../assets';
-import {Spacer} from '../Spacer';
-import {colors} from '../../constants';
+import React from "react";
+import { StyleSheet } from "react-native";
+import { ComponentWrapper, RowWrapperBasic, Wrapper } from "../Wrappers";
+import { Text, Image, TouchableOpacity } from "../../core-ui";
+import { height, width } from "../../helpers/dimensions";
+import { Add, fontFamily, fontSize } from "../../assets";
+import { Spacer } from "../Spacer";
+import { colors } from "../../constants";
 
-export const ProductCard = ({item, wrapperStyle, onAdd}) => {
-  const {styles} = useStyles();
+export const ProductCard = ({ item, wrapperStyle, onAdd }) => {
+  const { styles } = useStyles();
   return (
     <Wrapper style={[styles.wrapper, wrapperStyle]}>
       <Image style={styles.productImage} src={item?.img} />
@@ -26,8 +26,8 @@ export const ProductCard = ({item, wrapperStyle, onAdd}) => {
   );
 };
 
-export const RecommendationCard = ({item, wrapperStyle, onAdd}) => {
-  const {styles} = useStyles();
+export const RecommendationCard = ({ item, wrapperStyle, onAdd }) => {
+  const { styles } = useStyles();
   return (
     <RowWrapperBasic style={[styles.recommendedWrapper, wrapperStyle]}>
       <Image style={styles.recommendedImage} src={item?.img} />
@@ -35,6 +35,28 @@ export const RecommendationCard = ({item, wrapperStyle, onAdd}) => {
       <ComponentWrapper>
         <Text style={styles.recommendedTitle}>{item?.name}</Text>
         <Text style={styles.recommendedText}>{`weight ${item?.weight}`}</Text>
+        <Text style={styles.recommendedText}>{item?.price}</Text>
+      </ComponentWrapper>
+      <TouchableOpacity style={styles.margin} onPress={onAdd}>
+        <Add />
+      </TouchableOpacity>
+      <Spacer isSmall />
+    </RowWrapperBasic>
+  );
+};
+export const CartCard = ({ item, wrapperStyle, onAdd }) => {
+  const { styles } = useStyles();
+  return (
+    <RowWrapperBasic style={[styles.cartWrapper, wrapperStyle]}>
+      <ComponentWrapper>
+        <Image style={styles.recommendedImage} src={item?.img} />
+        <Text style={styles.recommendedText}>{`weight ${item?.weight}`}</Text>
+      </ComponentWrapper>
+
+      <Spacer isSmall />
+      <ComponentWrapper>
+        <Text style={styles.recommendedTitle}>{item?.name}</Text>
+
         <Text style={styles.recommendedText}>{item?.price}</Text>
       </ComponentWrapper>
       <TouchableOpacity style={styles.margin} onPress={onAdd}>
@@ -59,8 +81,8 @@ const useStyles = () => {
     productImage: {
       borderRadius: 6,
       height: height(20),
-      width: '50%',
-      alignSelf: 'center',
+      width: "50%",
+      alignSelf: "center",
     },
     title: {
       color: colors.textColor1,
@@ -75,7 +97,7 @@ const useStyles = () => {
       marginHorizontal: width(4),
     },
     spaceBetween: {
-      justifyContent: 'space-between',
+      justifyContent: "space-between",
     },
     margin: {
       marginHorizontal: width(2),
@@ -105,6 +127,16 @@ const useStyles = () => {
       fontFamily: fontFamily.RalewayMedium,
       fontSize: fontSize.medium,
     },
+    cartWrapper: {
+      width: width(86),
+      height: height(20),
+      backgroundColor: colors.backgroudColor4,
+      borderWidth: 1,
+      borderColor: colors.backgroudColor4,
+      borderRadius: 12,
+      elevation: 5,
+      margin: 5,
+    },
   });
-  return {styles};
+  return { styles };
 };
