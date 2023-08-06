@@ -1,5 +1,5 @@
-import {Home, Cart} from '../../assets/svg';
-import {SCREENS} from '../../constants';
+import { Home, Cart, Category } from "../../assets/svg";
+import { SCREENS } from "../../constants";
 
 export const TabIcons = (key, color, size) => {
   switch (key) {
@@ -7,6 +7,8 @@ export const TabIcons = (key, color, size) => {
       return <Home color={color} height={size} width={size} />;
     case SCREENS.CART:
       return <Cart color={color} height={size} width={size} />;
+    case SCREENS.CATEGORY:
+      return <Category color={color} height={size} width={size} />;
     default:
       return <Home color={color} height={size} width={size} />;
   }
