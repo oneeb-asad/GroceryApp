@@ -14,9 +14,9 @@ const CategoryScreen = () => {
   const { styles } = useStyles();
   return (
     <MainWrapper>
-      <Spacer />
-      <Spacer />
       <ScrollWrapper>
+        <Spacer />
+        <Spacer />
         <ComponentWrapper>
           <RowWrapperBasic style={styles.row}>
             <Text style={styles.title}>Vegetables</Text>
@@ -36,6 +36,7 @@ const CategoryScreen = () => {
         <Spacer />
         <Spacer isTiny />
         <FruitsSection />
+        <Spacer />
       </ScrollWrapper>
     </MainWrapper>
   );
