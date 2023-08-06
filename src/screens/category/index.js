@@ -1,30 +1,43 @@
 import React from "react";
+import { Text } from "../../core-ui";
 import {
+  Spacer,
   ComponentWrapper,
   MainWrapper,
   RowWrapperBasic,
   ScrollWrapper,
-} from "../../commons/Wrappers";
-import { Text } from "../../core-ui";
-import {
-  Spacer,
-  Avatar,
-  CategoriesHeader,
-  TextHeader,
-  RecommendationCard,
 } from "../../commons";
-// import { useStyles } from "./styles";
-import { totalSize } from "../../constants";
-import { data } from "../../constants";
-import { ProductSection, RecommendationSection } from "./components";
+import { useStyles } from "./styles";
+import { VegetablesSection, FruitsSection } from "./components";
 
 const CategoryScreen = () => {
-  // const { styles } = useStyles();
+  const { styles } = useStyles();
   return (
     <MainWrapper>
-      <Text>Category</Text>
+      <Spacer />
+      <Spacer />
+      <ScrollWrapper>
+        <ComponentWrapper>
+          <RowWrapperBasic style={styles.row}>
+            <Text style={styles.title}>Vegetables</Text>
+            <Text style={styles.showAll}>Show All</Text>
+          </RowWrapperBasic>
+        </ComponentWrapper>
+        <Spacer />
+        <Spacer isTiny />
+        <VegetablesSection />
+        <Spacer />
+        <ComponentWrapper>
+          <RowWrapperBasic style={styles.row}>
+            <Text style={styles.title}>Fruits</Text>
+            <Text style={styles.showAll}>Show All</Text>
+          </RowWrapperBasic>
+        </ComponentWrapper>
+        <Spacer />
+        <Spacer isTiny />
+        <FruitsSection />
+      </ScrollWrapper>
     </MainWrapper>
   );
 };
-
 export default CategoryScreen;
