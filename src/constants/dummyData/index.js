@@ -121,6 +121,20 @@ export const data = {
       weight: "100g",
       price: "$16/kg",
     },
+    {
+      id: 7,
+      img: appImages.raddish,
+      name: "Raddish",
+      weight: "80g",
+      price: "$8/kg",
+    },
+    {
+      id: 8,
+      img: appImages.corn,
+      name: "Corn",
+      weight: "100g",
+      price: "$16/kg",
+    },
   ],
 
   fruits: [
@@ -141,6 +155,20 @@ export const data = {
 
     {
       id: 3,
+      img: appImages.banana,
+      name: "Banana",
+      weight: "100g",
+      price: "$10/kg",
+    },
+    {
+      id: 4,
+      img: appImages.banana,
+      name: "Banana",
+      weight: "100g",
+      price: "$10/kg",
+    },
+    {
+      id: 5,
       img: appImages.banana,
       name: "Banana",
       weight: "100g",
